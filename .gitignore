@@ -1,0 +1,36 @@
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Output directory
+out/
+dist/
+
+# Node dependencies
+node_modules/
+
+# Python environments
+**/doc_env/
+**/prompt_env/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+
+# API keys
+.env
+.env.*
+
+# OS specific
+.DS_Store
+Thumbs.db

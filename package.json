@@ -1,0 +1,426 @@
+{
+  "name": "cursor-copilot",
+  "displayName": "Cursor Copilot",
+  "description": "基于AI的文档和提示词管理工具，支持文档生成和提示词创建",
+  "version": "1.0.0",
+  "publisher": "kevinflynn",
+  "author": {
+    "name": "kevinflynn"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/kevinflynn/cursor-copilot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinflynn/cursor-copilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevinflynn/cursor-copilot/issues"
+  },
+  "keywords": [
+    "ai",
+    "prompt",
+    "copilot",
+    "document",
+    "cursor",
+    "productivity"
+  ],
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:docExplorer",
+    "onView:projectExplorer",
+    "onView:favoritesExplorer",
+    "onView:outlineExplorer",
+    "onView:promptFileExplorer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cursor-copilot",
+          "title": "Cursor Copilot",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "cursor-copilot": [
+        {
+          "id": "projectExplorer",
+          "name": "Projects"
+        },
+        {
+          "id": "promptFileExplorer",
+          "name": "prompt"
+        },
+        {
+          "id": "docExplorer",
+          "name": "Docs"
+        },
+        {
+          "id": "favoritesExplorer",
+          "name": "Pins"
+        },
+        {
+          "id": "outlineExplorer",
+          "name": "Outline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cursor-copilot.refreshPromptTree",
+        "title": "Refresh Prompt Tree",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cursor-copilot.createPromptFile",
+        "title": "Create Prompt",
+        "icon": "$(add)"
+      },
+      {
+        "command": "cursor-copilot.createPromptFolder",
+        "title": "Create Prompt Folder",
+        "icon": "$(folder-library)"
+      },
+      {
+        "command": "cursor-copilot.createPromptInFolder",
+        "title": "Create Prompt in Folder",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "cursor-copilot.deletePromptFolder",
+        "title": "Delete Prompt Folder",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "cursor-copilot.copyPromptContent",
+        "title": "Copy Prompt Content",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "cursor-copilot.openPromptFileLocation",
+        "title": "Open File Location",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "cursor-copilot.openPromptFolderLocation",
+        "title": "Open Folder Location",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "cursor-copilot.openPromptFile",
+        "title": "Open Prompt File",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "cursor-copilot.deletePromptFile",
+        "title": "Delete Prompt File",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "cursor-copilot.refreshProject",
+        "title": "Refresh Project",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cursor-copilot.createFile",
+        "title": "Create File",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "cursor-copilot.createFolder",
+        "title": "Create Folder",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "cursor-copilot.collapseAll",
+        "title": "Collapse All",
+        "icon": "$(collapse-all)"
+      },
+      {
+        "command": "cursor-copilot.openFile",
+        "title": "Open File"
+      },
+      {
+        "command": "cursor-copilot.openFileToSide",
+        "title": "Open to Side"
+      },
+      {
+        "command": "cursor-copilot.showInFinder",
+        "title": "Show in Finder"
+      },
+      {
+        "command": "cursor-copilot.copyPath",
+        "title": "Copy Path"
+      },
+      {
+        "command": "cursor-copilot.copyRelativePath",
+        "title": "Copy Relative Path"
+      },
+      {
+        "command": "cursor-copilot.renameFile",
+        "title": "Rename File/Folder"
+      },
+      {
+        "command": "cursor-copilot.deleteFile",
+        "title": "Delete File/Folder"
+      },
+      {
+        "command": "cursor-copilot.openInTerminal",
+        "title": "Open in Terminal"
+      },
+      {
+        "command": "cursor-copilot.refreshDocs",
+        "title": "Refresh Docs",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cursor-copilot.createDoc",
+        "title": "Create Doc",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "cursor-copilot.refreshFavorites",
+        "title": "Refresh Pins",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cursor-copilot.addFileToFavorites",
+        "title": "Add to Pins",
+        "icon": "$(star-add)"
+      },
+      {
+        "command": "cursor-copilot.addSnippetToFavorites",
+        "title": "Add Selected Code to Pins",
+        "icon": "$(star-add)"
+      },
+      {
+        "command": "cursor-copilot.removeFromFavorites",
+        "title": "Remove from Pins",
+        "icon": "$(star-delete)"
+      },
+      {
+        "command": "cursor-copilot.addFavoriteCode",
+        "title": "Add Selected Code to Pins",
+        "icon": "$(star-add)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "cursor-copilot.refreshPromptTree",
+          "when": "view == promptFileExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createPromptFile",
+          "when": "view == promptFileExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createPromptFolder",
+          "when": "view == promptFileExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.refreshProject",
+          "when": "view == projectExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createFile",
+          "when": "view == projectExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createFolder",
+          "when": "view == projectExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.collapseAll",
+          "when": "view == projectExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.refreshDocs",
+          "when": "view == docExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createDoc",
+          "when": "view == docExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.refreshFavorites",
+          "when": "view == favoritesExplorer",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "cursor-copilot.addSnippetToFavorites",
+          "when": "editorHasSelection",
+          "group": "1_favorites"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "cursor-copilot.copyPromptContent",
+          "when": "view == promptFileExplorer && viewItem == promptFile",
+          "group": "inline"
+        },
+        {
+          "command": "cursor-copilot.deletePromptFile",
+          "when": "view == promptFileExplorer && viewItem == promptFile",
+          "group": "1_modification"
+        },
+        {
+          "command": "cursor-copilot.openPromptFileLocation",
+          "when": "view == promptFileExplorer && viewItem == promptFile",
+          "group": "2_workspace"
+        },
+        {
+          "command": "cursor-copilot.createPromptInFolder",
+          "when": "view == promptFileExplorer && viewItem == promptDirectory",
+          "group": "3_create@1"
+        },
+        {
+          "command": "cursor-copilot.deletePromptFolder",
+          "when": "view == promptFileExplorer && viewItem == promptDirectory",
+          "group": "1_modification"
+        },
+        {
+          "command": "cursor-copilot.openPromptFolderLocation",
+          "when": "view == promptFileExplorer && viewItem == promptDirectory",
+          "group": "2_workspace"
+        },
+        {
+          "command": "cursor-copilot.createFile",
+          "when": "view == projectExplorer && viewItem == folder || viewItem == workspaceFolder",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.createFolder",
+          "when": "view == projectExplorer && viewItem == folder || viewItem == workspaceFolder",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.removeFromFavorites",
+          "when": "view == favoritesExplorer && (viewItem == favoriteFile || viewItem == favoriteCode)",
+          "group": "inline"
+        },
+        {
+          "command": "cursor-copilot.openFile",
+          "when": "view == projectExplorer && viewItem == file",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.openFileToSide",
+          "when": "view == projectExplorer && viewItem == file",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.showInFinder",
+          "when": "view == projectExplorer && (viewItem == file || viewItem == folder || viewItem == workspaceFolder)",
+          "group": "2_workspace"
+        },
+        {
+          "command": "cursor-copilot.copyPath",
+          "when": "view == projectExplorer && (viewItem == file || viewItem == folder || viewItem == workspaceFolder)",
+          "group": "3_copy"
+        },
+        {
+          "command": "cursor-copilot.copyRelativePath",
+          "when": "view == projectExplorer && (viewItem == file || viewItem == folder || viewItem == workspaceFolder)",
+          "group": "3_copy"
+        },
+        {
+          "command": "cursor-copilot.addFileToFavorites",
+          "when": "view == projectExplorer && viewItem == file",
+          "group": "7_favorites",
+          "title": "Add to Pins"
+        },
+        {
+          "command": "cursor-copilot.renameFile",
+          "when": "view == projectExplorer && (viewItem == file || viewItem == folder)",
+          "group": "4_modify"
+        },
+        {
+          "command": "cursor-copilot.deleteFile",
+          "when": "view == projectExplorer && (viewItem == file || viewItem == folder)",
+          "group": "4_modify"
+        },
+        {
+          "command": "cursor-copilot.openInTerminal",
+          "when": "view == projectExplorer && (viewItem == folder || viewItem == workspaceFolder)",
+          "group": "5_terminal"
+        },
+        {
+          "command": "cursor-copilot.openFile",
+          "when": "view == docExplorer && viewItem == docFile",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.openFileToSide",
+          "when": "view == docExplorer && viewItem == docFile",
+          "group": "navigation"
+        },
+        {
+          "command": "cursor-copilot.showInFinder",
+          "when": "view == docExplorer && (viewItem == docFile || viewItem == docFolder)",
+          "group": "2_workspace"
+        },
+        {
+          "command": "cursor-copilot.copyPath",
+          "when": "view == docExplorer && (viewItem == docFile || viewItem == docFolder)",
+          "group": "3_copy"
+        },
+        {
+          "command": "cursor-copilot.copyRelativePath",
+          "when": "view == docExplorer && (viewItem == docFile || viewItem == docFolder)",
+          "group": "3_copy"
+        },
+        {
+          "command": "cursor-copilot.addFileToFavorites",
+          "when": "view == docExplorer && viewItem == docFile",
+          "group": "6_favorites",
+          "title": "Add to Pins"
+        },
+        {
+          "command": "cursor-copilot.deleteFile",
+          "when": "view == docExplorer && viewItem == docFolder",
+          "group": "4_modify"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.2",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "codemirror": "^6.0.1",
+    "fabric": "^6.6.4",
+    "jsmind": "^0.8.7",
+    "markdown-it": "^14.1.0",
+    "marked": "^15.0.11",
+    "markmap-lib": "^0.18.11",
+    "uuid": "^9.0.0"
+  }
+}
