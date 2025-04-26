@@ -1,8 +1,8 @@
 {
   "name": "cursor-copilot",
   "displayName": "Cursor Copilot",
-  "description": "基于AI的文档和提示词管理工具，支持文档生成和提示词创建",
-  "version": "1.0.0",
+  "description": "AI-powered document and prompt management tool with document generation and prompt creation / 基于AI的文档和提示词管理工具，支持文档生成和提示词创建",
+  "version": "1.0.1",
   "publisher": "cursor-coplit",
   "author": {
     "name": "kevinflynn0503"
