@@ -1,0 +1,40 @@
+# 源代码文件
+.vscode/**
+.venv/**
+.git/**
+.gitignore
+tsconfig.json
+src/**
+**/*.map
+
+# 服务端文件和环境
+doc-gen-server/doc_env/**
+prompt_gen_server/prompt_env/**
+**/__pycache__/**
+**/*.pyc
+
+# 开发相关
+.github/**
+.eslintrc.json
+.npmrc
+webpack.config.js
+
+# 依赖
+node_modules/**
+!node_modules/fabric/**
+!node_modules/marked/**
+!node_modules/markdown-it/**
+!node_modules/markmap-lib/**
+!node_modules/codemirror/**
+!node_modules/jsmind/**
+!node_modules/uuid/**
+
+# 测试
+test/**
+**/*.test.js
+**/*.spec.js
+
+# 其他不需要的文件
+**/.DS_Store
+yarn.lock
+npm-debug.log

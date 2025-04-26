@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="64" cy="64" r="60" fill="#2C2C32"/>
+  
+  <!-- 光标图标 -->
+  <path d="M40 32V96L52 84H80C84.4183 84 88 80.4183 88 76V40C88 35.5817 84.4183 32 80 32H40Z" fill="#007ACC"/>
+  
+  <!-- AI连接点 -->
+  <circle cx="52" cy="52" r="6" fill="#FFFFFF"/>
+  <circle cx="76" cy="52" r="6" fill="#FFFFFF"/>
+  <circle cx="64" cy="70" r="6" fill="#FFFFFF"/>
+  
+  <!-- 连接线 -->
+  <line x1="52" y1="52" x2="76" y2="52" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="52" y1="52" x2="64" y2="70" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="76" y1="52" x2="64" y2="70" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 光标闪烁效果 -->
+  <rect x="58" y="42" width="12" height="3" fill="#FFFFFF">
+    <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+</svg>

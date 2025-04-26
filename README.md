@@ -1,8 +1,24 @@
 # VSCode AI助手扩展
 
+[![Version](https://img.shields.io/visual-studio-marketplace/v/cursor-coplit.cursor-copilot)](https://marketplace.visualstudio.com/items?itemName=cursor-coplit.cursor-copilot)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/cursor-coplit.cursor-copilot)](https://marketplace.visualstudio.com/items?itemName=cursor-coplit.cursor-copilot)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/cursor-coplit.cursor-copilot)](https://marketplace.visualstudio.com/items?itemName=cursor-coplit.cursor-copilot&ssr=false#review-details)
+[![GitHub](https://img.shields.io/github/license/kevinflynn0503/cursor-copilot)](https://github.com/kevinflynn0503/cursor-copilot/blob/main/LICENSE)
+
 ## 介绍
 
 这是一个VSCode扩展，提供了强大的AI辅助功能，可以帮助开发者生成文档、管理提示词，提高开发效率。该扩展集成了多种实用功能，能够满足文档管理和AI提示词管理的需求。
+
+## 安装
+
+您可以通过以下方式安装扩展：
+
+- 在VS Code扩展市场中搜索 "Cursor Copilot"
+- [直接访问VS Code市场页面](https://marketplace.visualstudio.com/items?itemName=cursor-coplit.cursor-copilot)
+- 或者使用VS Code Quick Open (Ctrl+P)，输入以下命令：
+  ```
+  ext install cursor-coplit.cursor-copilot
+  ```
 
 ## 功能
 

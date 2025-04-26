@@ -3,18 +3,18 @@
   "displayName": "Cursor Copilot",
   "description": "基于AI的文档和提示词管理工具，支持文档生成和提示词创建",
   "version": "1.0.0",
-  "publisher": "kevinflynn",
+  "publisher": "cursor-coplit",
   "author": {
-    "name": "kevinflynn"
+    "name": "kevinflynn0503"
   },
   "license": "MIT",
-  "homepage": "https://github.com/kevinflynn/cursor-copilot",
+  "homepage": "https://github.com/kevinflynn0503/cursor-copilot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevinflynn/cursor-copilot.git"
+    "url": "https://github.com/kevinflynn0503/cursor-copilot.git"
   },
   "bugs": {
-    "url": "https://github.com/kevinflynn/cursor-copilot/issues"
+    "url": "https://github.com/kevinflynn0503/cursor-copilot/issues"
   },
   "keywords": [
     "ai",
@@ -27,6 +27,11 @@
   "engines": {
     "vscode": "^1.60.0"
   },
+  "galleryBanner": {
+    "color": "#007ACC",
+    "theme": "dark"
+  },
+  "icon": "resources/icon@1x.png",
   "categories": [
     "Other"
   ],
@@ -44,7 +49,7 @@
         {
           "id": "cursor-copilot",
           "title": "Cursor Copilot",
-          "icon": "resources/icon.svg"
+          "icon": "resources/icon@1x.png"
         }
       ]
     },
@@ -412,6 +417,7 @@
     "@types/node": "^20.0.0",
     "@types/uuid": "^9.0.2",
     "@types/vscode": "^1.60.0",
+    "@vscode/vsce": "^3.3.2",
     "typescript": "^5.0.0"
   },
   "dependencies": {
